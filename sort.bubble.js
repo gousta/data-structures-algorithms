@@ -7,6 +7,7 @@ function sortBubble(arr) {
     for(let x = 0; x < total - i - 1; x++) {
       console.log('  ', x, '=', arr[x]);
   
+      console.log('  ', arr[x], '>', arr[x+1], arr[x] > arr[x+1]);
       if(arr[x] > arr[x+1]) {
         var tmp = arr[x];
         arr[x] = arr[x+1]; 
@@ -21,6 +22,4 @@ function sortBubble(arr) {
   return arr;
 }
 
-const props = JSON.parse(process.argv[2]);
-
-console.log(sortBubble(props));
+console.log(sortBubble([3,1,2]));

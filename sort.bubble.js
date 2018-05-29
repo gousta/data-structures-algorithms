@@ -1,13 +1,25 @@
-let arr = [31, 10, 49, 23, 8, 36];
 
-for(let i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
+function sortBubble(arr) {
+  const total = arr.length;
 
-  if(arr[i] > arr[i+1]) {
-    var tmp = arr[i];
-    arr[i] = arr[i+1];
-    arr[i+1] = tmp;
+  for(let i = 0; i < total; i++) {
+    console.log('i', i, arr[i]);
+  
+    for(let j = 0; j < total - i - 1; j++) {
+      console.log('j', j, arr[j]);
+  
+      if(arr[j] > arr[j+1]) {
+        var tmp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = tmp;
+      }
+  
+    }
+    
   }
+
+  return arr;
 }
 
-console.log(arr);
+
+console.log(sortBubble(JSON.parse(process.argv[2])));
